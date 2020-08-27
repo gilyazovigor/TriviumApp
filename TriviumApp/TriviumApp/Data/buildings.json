@@ -1,0 +1,21 @@
+[
+  {
+    "Id": 1,
+    "Name": "Object 1",
+    "Code": "S-01",
+    "Budget": 100.25
+  },
+  {
+    "Id": 2,
+    "Name": "Object 2",
+    "Code": "S-02",
+    "Budget": 150
+  },
+  {
+    "Id": 3,
+    "Name": "Object 3",
+    "Code": "S-QWE",
+    "Budget": 99.678
+  }
+]
+

@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "Name": "Version 1",
+    "Type": "Main"
+  },
+  {
+    "Id": 2,
+    "Name": "Version 2",
+    "Type": "Draft"
+  },
+  {
+    "Id": 3,
+    "Name": "Version 3",
+    "Type": "Draft"
+  }
+]

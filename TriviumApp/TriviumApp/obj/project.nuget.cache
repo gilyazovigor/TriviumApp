@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "cSSbQfAgK30Aouh3Qyz+6v3/Th6sjUoZNUm6ZQiiFA4Kp5CmiPA+ymVHftzFj47DWLbl/V9tcHbEYMI15vkBHw==",
+  "success": true,
+  "projectFilePath": "C:\\c#_studing\\trivium\\TriviumApp\\TriviumApp\\TriviumApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gilya\\.nuget\\packages\\json.net\\1.0.23\\json.net.1.0.23.nupkg.sha512",
+    "C:\\Users\\gilya\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

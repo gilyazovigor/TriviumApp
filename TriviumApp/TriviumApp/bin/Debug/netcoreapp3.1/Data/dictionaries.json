@@ -1,0 +1,51 @@
+[
+  {
+    "Id": 1,
+    "Name": "Building objects",
+    "Path": "Data\\buildings.json",
+    "Attributes": [
+      {
+        "Id": 1,
+        "Name": "Id",
+        "Type": "int"
+      },
+      {
+        "Id": 2,
+        "Name": "Name",
+        "Type": "string"
+      },
+      {
+        "Id": 3,
+        "Name": "Object code",
+        "Type": "string"
+      },
+      {
+        "Id": 4,
+        "Name": "Budget",
+        "Type": "double"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Data versions",
+    "Path": "Data\\versions.json",
+    "Attributes": [
+      {
+        "Id": 1,
+        "Name": "Id",
+        "Type": "int"
+      },
+      {
+        "Id": 2,
+        "Name": "Name",
+        "Type": "string"
+      },
+      {
+        "Id": 3,
+        "Name": "Version type",
+        "Type": "string"
+      }
+    ]
+  }
+]
