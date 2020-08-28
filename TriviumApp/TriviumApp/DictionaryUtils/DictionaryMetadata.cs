@@ -15,4 +15,5 @@ namespace TriviumApp.DictionaryUtils
         public string Name { get; set; }
         public List<DictionaryAttribute> Attributes { get; set; }
     }
+
 }

@@ -14,41 +14,31 @@ namespace TriviumApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IDictionaryService, DictionaryService>();
+            services.AddTransient<IReportService, ReportService>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDictionaryService dictionaryService)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, 
+            IDictionaryService dictionaryService, IReportService reportService)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-
             app.Run(async context =>
             {
+                // Getting right header dictionary metadata.
+                var rightHeaderDictionaryMetaData = dictionaryService.GetDictionaryMetadataById(1);
+                // Getting right header dictionary data.
+                var rightHeaderDictionaryData = dictionaryService.GetDictionaryDataById(1, DictionaryType.Buildings);
+                // Getting top header dictionary metadata.
+                var topHeaderDictionaryMetaData = dictionaryService.GetDictionaryMetadataById(2);
+                // Getting top header dictionary data.
+                var topHeaderDictionaryData = dictionaryService.GetDictionaryDataById(2, DictionaryType.Versions);
+                
+                string report = reportService.GetReportByDictionaryMetadata(
+                    rightHeaderDictionaryMetaData,
+                    topHeaderDictionaryMetaData,
+                    rightHeaderDictionaryData, 
+                    topHeaderDictionaryData);
+                
                 var sb = new StringBuilder();
-                
-                sb.Append("<table>");
-                // Получаем метаданные справочника и выводим заголовки.
-                var dictionaryMetadata = dictionaryService.GetDictionaryMetadataById(2);
-                sb.Append("<tr>");
-                foreach (DictionaryAttribute attribute in dictionaryMetadata.Attributes)
-                {
-                    sb.Append($"<th>{attribute.Name}</th>");
-                }
-                sb.Append("</tr>");
-                
-                // Получаем данные словаря по его id и типу и выводим данные.
-                var dictionaryData = dictionaryService.GetDictionaryDataById(2, DictionaryType.Versions);
-                foreach (IDictionaryRow row in dictionaryData.Rows)
-                {
-                    sb.Append("<tr>");
-                    foreach (var item in row.Items) 
-                    {
-                        sb.Append($"<td>{item}</td>");
-                    }
-                    sb.Append("</tr>");
-                }
-
+                sb.Append(report);
                 context.Response.ContentType = "text/html;charset=utf-8";
                 await context.Response.WriteAsync(sb.ToString());
             });

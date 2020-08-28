@@ -4,14 +4,14 @@ namespace TriviumApp.DictionaryUtils
 {
     public interface IDictionaryData
     {
-        public List<IDictionaryRow> Rows { get; set; }
+        public List<DictionaryRow> Rows { get; set; }
     }
     public class DictionaryData : IDictionaryData
     {
-        public List<IDictionaryRow> Rows { get; set; }
+        public List<DictionaryRow> Rows { get; set; }
         public DictionaryData() 
         {
-            Rows = new List<IDictionaryRow>();
+            Rows = new List<DictionaryRow>();
         }
     }
 }

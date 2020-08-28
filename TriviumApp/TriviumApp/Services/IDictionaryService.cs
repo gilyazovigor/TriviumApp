@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Text.Json;
 using TriviumApp.DictionaryUtils;
+using TriviumApp.Models;
 
 namespace TriviumApp.Services
 {
@@ -25,7 +26,7 @@ namespace TriviumApp.Services
             {
                 if (dictionaries == null)
                 {
-                    using (StreamReader r = new StreamReader(@"Data\dictionaries.json"))
+                    using (StreamReader r = new StreamReader(DictionariesListPath))
                     {
                         string json = r.ReadToEnd();
                         dictionaries = JsonConvert.DeserializeObject<List<Dictionary>>(json);
@@ -53,7 +54,6 @@ namespace TriviumApp.Services
                     foreach (Building row in JsonConvert.DeserializeObject<List<Building>>(json))
                     {
                         var items = new List<string>();
-                        items.Add(row.Id.ToString());
                         items.Add(row.Name);
                         items.Add(row.Code);
                         items.Add(row.Budget.ToString());
@@ -64,15 +64,13 @@ namespace TriviumApp.Services
                     foreach (Version row in JsonConvert.DeserializeObject<List<Version>>(json))
                     {
                         var items = new List<string>();
-                        items.Add(row.Id.ToString());
                         items.Add(row.Name);
                         items.Add(row.Type);
                         dictionaryData.Rows.Add(new DictionaryRow(items));
                     }
                     break;
-                // Сюда добавить формирование dictionaryData.Rows для новыого типа словаря при необходимости.
+                // Here you can add work with new dictionary type if it's needed.
             }
-
             return dictionaryData;
         }
 

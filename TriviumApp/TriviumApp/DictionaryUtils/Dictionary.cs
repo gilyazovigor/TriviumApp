@@ -9,7 +9,7 @@ namespace TriviumApp.DictionaryUtils
     {
         Buildings,
         Versions
-        // Сюда добавить новый тип словаря при необходимости.
+        // Here you can add new type of dictionary if it's needed.
     }
 
     public class Dictionary

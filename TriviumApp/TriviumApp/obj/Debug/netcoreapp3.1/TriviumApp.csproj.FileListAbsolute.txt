@@ -24,3 +24,4 @@ C:\c#_studing\trivium\TriviumApp\TriviumApp\obj\Debug\netcoreapp3.1\TriviumApp.c
 C:\c#_studing\trivium\TriviumApp\TriviumApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\c#_studing\trivium\TriviumApp\TriviumApp\obj\Debug\netcoreapp3.1\TriviumApp.csproj.CoreCompileInputs.cache
 C:\c#_studing\trivium\TriviumApp\TriviumApp\obj\Debug\netcoreapp3.1\TriviumApp.MvcApplicationPartsAssemblyInfo.cache
+C:\c#_studing\trivium\TriviumApp\TriviumApp\bin\Debug\netcoreapp3.1\Data\database.json
